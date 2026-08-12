@@ -114,3 +114,4 @@ footer{padding:24px 0;background:#03070d;color:#718195;font-size:9px;border-top:
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-de][data-en]').forEach(e=>e.textContent=e.dataset[l]);document.getElementById('de').classList.toggle('on',l==='de');document.getElementById('en').classList.toggle('on',l==='en');localStorage.setItem('smartGaLang',l)}
 document.addEventListener('DOMContentLoaded',()=>setLang(localStorage.getItem('smartGaLang')||'de'));
 </script></body></html>
+
