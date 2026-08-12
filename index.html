@@ -22,11 +22,11 @@
 html{scroll-behavior:smooth}
 section{scroll-margin-top:105px}
 
-body{
-  margin:0;
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+body {
+    margin: 0;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    background: #03050a;
+    color: #f6f8fb;
 }
 
 a{
@@ -135,11 +135,13 @@ nav{
 
 /* HERO */
 
-.hero{
-  min-height:790px;
-  background:
-    radial-gradient(circle at 72% 43%,#154b8838,transparent 28%),
-    radial-gradient(circle at 88% 22%,#7d4cff28,transparent 22%);
+.hero {
+    min-height: 790px;
+    background:
+        radial-gradient(circle at 72% 43%, #154b8860, transparent 32%),
+        radial-gradient(circle at 88% 22%, #7d4cff35, transparent 28%),
+        linear-gradient(115deg, #03050a 0%, #030712 55%, #08051c 100%);
+    color: #f6f8fb;
 }
 
 .heroGrid{
@@ -158,22 +160,23 @@ h1{
   margin:23px 0;
 }
 
-.soft{
-  color:#7e8b9b;
+.soft {
+    color: #7e8b9b;
 }
 
 .glow {
-  display: inline-block;
-  background: linear-gradient(
-    90deg,
-    #20f3d2,
-    #4eb2ff,
-    #9a6cff
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+    display: inline-block;
+    background: linear-gradient(
+        90deg,
+        #20f3d2 0%,
+        #22d7e8 35%,
+        #4b8cff 68%,
+        #9a6cff 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .lead{
@@ -228,17 +231,30 @@ h1{
   border-radius:50%;
 }
 
-.core{
-  z-index:2;
-  width:115px;
-  height:115px;
-  border-radius:30px;
-  background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple));
-  display:grid;
-  place-items:center;
-  font-size:45px;
-  font-weight:950;
-  box-shadow:0 0 60px #2ecfff55;
+.core {
+    z-index: 2;
+    width: 115px;
+    height: 115px;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #20f3d2,
+        #4b8cff,
+        #9a6cff
+    );
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+    font-size: 45px;
+    font-weight: 950;
+
+    box-shadow:
+        0 0 30px #20f3d255,
+        0 0 70px #4b8cff55,
+        0 0 110px #9a6cff30;
 }
 
 .node{
