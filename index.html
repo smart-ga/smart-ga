@@ -5,7 +5,148 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>SMART GA</title>
+/* ABOUT */
 
+.about{
+  padding:105px 0;
+  background:#07101b;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+
+.about:before{
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  border-radius:50%;
+  right:-250px;
+  top:-300px;
+  background:radial-gradient(circle,rgba(75,140,255,.14),transparent 68%);
+}
+
+.aboutGrid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:90px;
+  align-items:start;
+}
+
+.aboutLabel{
+  color:var(--cyan);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.16em;
+}
+
+.about h2{
+  font-size:45px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+  margin:15px 0 22px;
+  max-width:600px;
+}
+
+.aboutText{
+  color:#9dabb9;
+  font-size:14px;
+  line-height:1.9;
+  max-width:720px;
+}
+
+.aboutText strong{
+  color:#fff;
+  font-weight:700;
+}
+
+.aboutFacts{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:35px;
+}
+
+.aboutFact{
+  padding:20px;
+  border-radius:17px;
+  border:1px solid #ffffff12;
+  background:#ffffff07;
+}
+
+.aboutFact small{
+  display:block;
+  color:#718295;
+  font-size:8px;
+  letter-spacing:.12em;
+  margin-bottom:8px;
+  font-weight:800;
+}
+
+.aboutFact strong{
+  display:block;
+  color:#fff;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.aboutStatement{
+  padding:27px 28px;
+  border:1px solid #ffffff12;
+  border-radius:22px;
+  background:linear-gradient(145deg,#0b1624,#0b1220);
+}
+
+.aboutStatementNumber{
+  width:45px;
+  height:45px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#04121b;
+  font-weight:950;
+  margin-bottom:25px;
+}
+
+.aboutStatement h3{
+  font-size:18px;
+  margin:0 0 12px;
+}
+
+.aboutStatement p{
+  margin:0;
+  color:#8999aa;
+  font-size:12px;
+  line-height:1.8;
+}
+
+@media(max-width:950px){
+  .aboutGrid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .aboutFacts{
+    grid-template-columns:1fr;
+  }
+
+  .about h2{
+    font-size:36px;
+  }
+}
+
+@media(max-width:600px){
+  .about{
+    padding:70px 0;
+  }
+
+  .about h2{
+    font-size:31px;
+  }
+}
 <style>
 :root{
   --bg:#03050a;
@@ -371,7 +512,110 @@ h1{
   line-height:1.75;
   color:#718093;
 }
+<!-- ABOUT -->
 
+<section class="about" id="about">
+
+<div class="wrap">
+
+<div class="aboutGrid">
+
+<div>
+
+<span
+class="aboutLabel"
+data-de="ÜBER UNS"
+data-en="ABOUT US">
+ÜBER UNS
+</span>
+
+<h2
+data-de="Technisches Know-how. Praxiserfahrung. Direkte Zusammenarbeit."
+data-en="Technical expertise. Industry experience. Direct cooperation.">
+Technisches Know-how. Praxiserfahrung. Direkte Zusammenarbeit.
+</h2>
+
+<p
+class="aboutText"
+data-de="SMART GA ist ein unabhängiger Engineering-Dienstleister für Gebäudeautomation und MSR-Technik mit Sitz in Vorarlberg, Österreich. Unser technischer Hintergrund verbindet eine Master-Level-Ausbildung in Mechatronik und Automatisierungstechnik mit praktischer Berufserfahrung in der Gebäudeautomation – einschließlich Erfahrung aus der Arbeit bei Siemens Smart Infrastructure."
+data-en="SMART GA is an independent engineering service provider for building automation and control engineering based in Vorarlberg, Austria. Our technical background combines Master's-level education in mechatronics and automation engineering with practical professional experience in building automation – including experience gained while working at Siemens Smart Infrastructure.">
+SMART GA ist ein unabhängiger Engineering-Dienstleister für Gebäudeautomation und MSR-Technik mit Sitz in Vorarlberg, Österreich. Unser technischer Hintergrund verbindet eine Master-Level-Ausbildung in Mechatronik und Automatisierungstechnik mit praktischer Berufserfahrung in der Gebäudeautomation – einschließlich Erfahrung aus der Arbeit bei Siemens Smart Infrastructure.
+</p>
+
+<div class="aboutFacts">
+
+<div class="aboutFact">
+<small
+data-de="AUSBILDUNG"
+data-en="EDUCATION">
+AUSBILDUNG
+</small>
+
+<strong
+data-de="Master-Level Engineering"
+data-en="Master's-Level Engineering">
+Master-Level Engineering
+</strong>
+</div>
+
+
+<div class="aboutFact">
+<small
+data-de="ERFAHRUNG"
+data-en="EXPERIENCE">
+ERFAHRUNG
+</small>
+
+<strong
+data-de="Siemens Smart Infrastructure"
+data-en="Siemens Smart Infrastructure">
+Siemens Smart Infrastructure
+</strong>
+</div>
+
+
+<div class="aboutFact">
+<small
+data-de="SPEZIALISIERUNG"
+data-en="SPECIALIZATION">
+SPEZIALISIERUNG
+</small>
+
+<strong
+data-de="Gebäudeautomation & MSR"
+data-en="Building Automation & BMS">
+Gebäudeautomation & MSR
+</strong>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="aboutStatement">
+
+<div class="aboutStatementNumber">S</div>
+
+<h3
+data-de="Engineering für Ihre Projekte."
+data-en="Engineering for your projects.">
+Engineering für Ihre Projekte.
+</h3>
+
+<p
+data-de="Der Fokus liegt auf Siemens PXC-Programmierung, Desigo-Visualisierung, Schnittstellen- und IoT-Integration sowie Inbetriebnahme von Heizungs- und Lüftungsanlagen. SMART GA unterstützt GA-Unternehmen, Systemintegratoren und Fachfirmen flexibel mit zusätzlicher Engineering-Kapazität – projektbezogen, effizient und mit direkter technischer Kommunikation."
+data-en="Our focus is on Siemens PXC programming, Desigo visualization, interface and IoT integration, as well as commissioning of heating and ventilation systems. SMART GA provides flexible additional engineering capacity for building automation companies, system integrators and specialist contractors – project-based, efficient and with direct technical communication.">
+Der Fokus liegt auf Siemens PXC-Programmierung, Desigo-Visualisierung, Schnittstellen- und IoT-Integration sowie Inbetriebnahme von Heizungs- und Lüftungsanlagen. SMART GA unterstützt GA-Unternehmen, Systemintegratoren und Fachfirmen flexibel mit zusätzlicher Engineering-Kapazität – projektbezogen, effizient und mit direkter technischer Kommunikation.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 /* CONTACT */
 
 .contact{
@@ -683,6 +927,7 @@ SMART <b>GA</b>
 <div class="links">
 <a href="#" data-de="Startseite" data-en="Home">Startseite</a>
 <a href="#services" data-de="Leistungen" data-en="Services">Leistungen</a>
+<a href="#about" data-de="Über uns" data-en="About Us">Über uns</a>
 <a href="#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
 </div>
 
