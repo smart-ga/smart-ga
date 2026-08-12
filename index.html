@@ -162,11 +162,18 @@ h1{
   color:#7e8b9b;
 }
 
-.glow{
-  background:linear-gradient(90deg,var(--cyan),#4eb2ff,#a076ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+.glow {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #20f3d2,
+    #4eb2ff,
+    #9a6cff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .lead{
@@ -860,9 +867,19 @@ E-Mail schreiben ↗
 <div>
 
 <h1>
-<span data-de="GEBÄUDE." data-en="BUILDINGS.">GEBÄUDE.</span><br>
-<span class="soft" data-de="VERNETZT." data-en="CONNECTED.">VERNETZT.</span><br>
-<span class="glow" data-de="GEREGELT." data-en="CONTROLLED.">GEREGELT.</span>
+  <span data-de="GEBÄUDE." data-en="BUILDINGS.">GEBÄUDE.</span><br>
+
+  <span class="soft"
+        data-de="VERNETZT."
+        data-en="CONNECTED.">
+    VERNETZT.
+  </span><br>
+
+  <span class="glow"
+        data-de="GEREGELT."
+        data-en="CONTROLLED.">
+    GEREGELT.
+  </span>
 </h1>
 
 <p
