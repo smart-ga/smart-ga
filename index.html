@@ -6,12 +6,12 @@
 <meta name="theme-color" content="#03050a">
 <title>SMART GA | Gebäudeautomation & Engineering in Vorarlberg</title>
 
-<meta name="description" content="Engineering für Gebäudeautomation und Mess-, Steuerungs- und Regelungstechnik (MSR) in Vorarlberg: Siemens PXC, Desigo, Schnittstellen und Inbetriebnahme.">
+<meta name="description" content="Herstellerunabhängiges Engineering für Gebäudeautomation und Mess-, Steuerungs- und Regelungstechnik (MSR) in Vorarlberg: Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_AT">
 <meta property="og:title" content="SMART GA | Gebäudeautomation & Engineering">
-<meta property="og:description" content="Externe Engineering Kapazität für Gebäudeautomation, Siemens PXC, Desigo, Schnittstellen und Inbetriebnahme.">
+<meta property="og:description" content="Externe Engineering-Kapazität für herstellerunabhängige Gebäudeautomation, Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme.">
 <meta property="og:url" content="https://smart-ga.at/">
 <meta property="og:image" content="https://smart-ga.at/favicon.png">
 
@@ -30,7 +30,7 @@
   "email": "office@smart-ga.at",
   "telephone": "+43 676 474 9969",
   "areaServed": "Vorarlberg, Österreich",
-  "description": "Engineering-Dienstleister für Gebäudeautomation, Mess-, Steuerungs- und Regelungstechnik (MSR), Siemens PXC, Desigo, Schnittstellen und Inbetriebnahme."
+  "description": "Herstellerunabhängiger Engineering-Dienstleister für Gebäudeautomation, Mess-, Steuerungs- und Regelungstechnik (MSR), Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme."
 }
 </script>
   
@@ -1236,6 +1236,249 @@ footer{padding:30px 0}
   text-transform:uppercase;
 }
 
+/* PROJECT PRICE CALCULATOR */
+
+.calculator{
+  padding:120px 0;
+  color:#f6f8fb;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(32,243,210,.09),transparent 30%),
+    radial-gradient(circle at 88% 82%,rgba(75,140,255,.12),transparent 34%),
+    #050810;
+}
+
+.calculatorShell{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+  gap:22px;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:32px;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  box-shadow:0 40px 100px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.05);
+}
+
+.calculatorShell:before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  top:-300px;
+  left:22%;
+  border-radius:50%;
+  background:rgba(32,243,210,.08);
+  filter:blur(30px);
+  pointer-events:none;
+}
+
+.calculatorControls,
+.calculatorResult{
+  position:relative;
+  z-index:1;
+  border-radius:24px;
+}
+
+.calculatorControls{
+  padding:34px;
+}
+
+.calculatorEyebrow{
+  display:block;
+  margin-bottom:12px;
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+
+.calculator h2{
+  max-width:620px;
+  margin:0;
+  font-size:clamp(38px,4.2vw,58px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+
+.calculatorIntro{
+  max-width:650px;
+  margin:20px 0 30px;
+  color:#9aa9b9;
+  font-size:16px;
+  line-height:1.75;
+}
+
+.pointsControl{
+  margin-bottom:24px;
+}
+
+.pointsControl label,
+.serviceOptions legend{
+  display:block;
+  margin-bottom:10px;
+  color:#dce6ef;
+  font-size:14px;
+  font-weight:750;
+}
+
+.pointsInput{
+  display:flex;
+  align-items:center;
+  max-width:310px;
+  min-height:58px;
+  padding:0 16px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  background:rgba(3,7,13,.62);
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+
+.pointsInput:focus-within{
+  border-color:rgba(32,243,210,.58);
+  box-shadow:0 0 0 4px rgba(32,243,210,.08);
+}
+
+.pointsInput input{
+  min-width:0;
+  width:100%;
+  border:0;
+  outline:0;
+  color:#fff;
+  background:transparent;
+  font:800 21px/1 inherit;
+}
+
+.pointsInput span{
+  flex:0 0 auto;
+  color:#77889b;
+  font-size:14px;
+}
+
+.serviceOptions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+.serviceOptions legend{
+  grid-column:1/-1;
+  width:100%;
+}
+
+.serviceOption{
+  display:grid;
+  grid-template-columns:20px minmax(0,1fr);
+  gap:12px;
+  align-items:center;
+  min-height:72px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+  cursor:pointer;
+  transition:border-color .2s ease,background .2s ease,transform .2s ease;
+}
+
+.serviceOption:hover{
+  transform:translateY(-2px);
+  border-color:rgba(32,243,210,.24);
+  background:rgba(255,255,255,.055);
+}
+
+.serviceOption:has(input:checked){
+  border-color:rgba(32,243,210,.34);
+  background:linear-gradient(135deg,rgba(32,243,210,.08),rgba(75,140,255,.06));
+}
+
+.serviceOption input{
+  width:18px;
+  height:18px;
+  margin:0;
+  accent-color:#20f3d2;
+}
+
+.serviceOption span{
+  min-width:0;
+  color:#ecf2f7;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.35;
+}
+
+
+/* THIRD-PARTY / IOT INTEGRATION */
+#projectEstimate{
+  display:block;
+  margin:17px 0 8px;
+  color:#fff;
+  font-size:clamp(48px,5.7vw,78px);
+  font-weight:900;
+  line-height:.98;
+  letter-spacing:-.055em;
+  overflow-wrap:anywhere;
+}
+
+.resultDivider{
+  height:1px;
+  margin:30px 0 24px;
+  background:rgba(255,255,255,.09);
+}
+
+.calculatorDisclaimer{
+  margin:0 0 24px;
+  color:#8fa0b1;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.negotiationNote{
+  display:block;
+  margin:-8px 0 24px;
+  color:#cfe8e5;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.6;
+}
+
+.calculatorButton{
+  align-self:flex-start;
+  min-height:48px;
+  padding:0 20px;
+  border-radius:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#061019;
+  background:linear-gradient(135deg,#fff,#dffdfa);
+  font-size:14px;
+  font-weight:850;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.calculatorButton:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 36px rgba(32,243,210,.14);
+}
+
+@media(max-width:950px){
+  .calculatorShell{grid-template-columns:1fr}
+  .calculatorResult{min-height:410px}
+}
+
+@media(max-width:600px){
+  .calculator{padding:82px 0}
+  .calculatorShell{padding:10px;border-radius:24px}
+  .calculatorControls,.calculatorResult{padding:26px 20px}
+  .serviceOptions{grid-template-columns:1fr}
+  .pointsInput{max-width:none}
+  .calculatorResult{min-height:360px}
+  #projectEstimate{font-size:48px}
+}
+
 @media(prefers-reduced-motion:reduce){
   .orb,.orb:before,.orb:after,.core,.node,.nodeArt svg{animation:none!important}
   .visual{transition:none}
@@ -1260,6 +1503,7 @@ SMART <b>GA</b>
 <div class="links">
 <a href="#" data-de="Startseite" data-en="Home">Startseite</a>
 <a href="#services" data-de="Leistungen" data-en="Services">Leistungen</a>
+<a href="#calculator" data-de="Preisrechner" data-en="Price Calculator">Preisrechner</a>
 <a href="#about" data-de="Über uns" data-en="About Us">Über uns</a>
 <a href="#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
 </div>
@@ -1312,9 +1556,9 @@ E-Mail schreiben ↗
 
 <p
 class="lead"
-data-de="Externe Engineering Kapazität für GA-Unternehmen, Systemintegratoren und Fachfirmen für Siemens Gebäudeautomation, PXC-Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme."
-data-en="External engineering capacity for building automation companies, system integrators and specialist contractors covering Siemens building automation, PXC programming, visualization, interfaces and commissioning.">
-Externe Engineering-Kapazität für GA-Unternehmen, Systemintegratoren und Fachfirmen – für Siemens Gebäudeautomation, PXC-Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme.
+data-de="Externe Engineering-Kapazität für GA-Unternehmen, Systemintegratoren und Fachfirmen – herstellerunabhängig für Gebäudeautomation, DDC-/SPS-Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme."
+data-en="External engineering capacity for building automation companies, system integrators and specialist contractors – vendor-independent across building automation, DDC/PLC programming, visualization, interfaces and commissioning.">
+Externe Engineering-Kapazität für GA-Unternehmen, Systemintegratoren und Fachfirmen – herstellerunabhängig für Gebäudeautomation, DDC-/SPS-Programmierung, Visualisierung, Schnittstellen und Inbetriebnahme.
 </p>
 
 <div class="actions">
@@ -1359,7 +1603,7 @@ Projekt besprechen
 <b data-de="Visualisierung" data-en="Visualization">
 Visualisierung
 </b>
-<p>Desigo CC · Desigo Control Point</p>
+<p data-de="Leitsysteme · Web · Touchpanels" data-en="Supervisory systems · Web · Touch panels">Leitsysteme · Web · Touchpanels</p>
 </div>
 
 </div>
@@ -1407,8 +1651,8 @@ Heizung · Lüftung · MSR
 </div>
 
 <div class="nodeText">
-<b data-de="Schnittstellen & IoT" data-en="Interfaces & IoT">
-Schnittstellen & IoT
+<b data-de="Drittanbieter- & IoT-Integration" data-en="Third Party & IoT Integration">
+Drittanbieter- & IoT-Integration
 </b>
 <p>BACnet · Modbus · M-Bus · KNX</p>
 </div>
@@ -1493,9 +1737,9 @@ Visualisierung
 </h3>
 
 <p
-data-de="Desigo CC und Desigo Control Point für Bedienung, Monitoring, Trends und Alarme."
-data-en="Desigo CC and Desigo Control Point for operation, monitoring, trends and alarms.">
-Desigo CC und Desigo Control Point für Bedienung, Monitoring, Trends und Alarme.
+data-de="Herstellerunabhängige Visualisierung für Bedienung, Monitoring, Trends und Alarme – vom Leitsystem bis zum lokalen Touchpanel."
+data-en="Vendor-independent visualization for operation, monitoring, trends and alarms – from supervisory systems to local touch panels.">
+Herstellerunabhängige Visualisierung für Bedienung, Monitoring, Trends und Alarme – vom Leitsystem bis zum lokalen Touchpanel.
 </p>
 
 </article>
@@ -1512,14 +1756,14 @@ Desigo CC und Desigo Control Point für Bedienung, Monitoring, Trends und Alarme
 </svg>
 </div>
 
-<h3 data-de="PXC-Programmierung" data-en="PXC Programming">
-PXC-Programmierung
+<h3 data-de="DDC-/SPS-Programmierung" data-en="DDC/PLC Programming">
+DDC-/SPS-Programmierung
 </h3>
 
 <p
-data-de="Programmierung von Siemens PXC-Controllern und Entwicklung optimierter Automationslösungen für Heizungs- und Lüftungsanlagen mit passenden Regelstrategien, Sequenzen und Funktionsabläufen."
-data-en="Programming Siemens PXC controllers and developing optimized automation solutions for heating, ventilation and control systems – with tailored control strategies, sequences and functional workflows.">
-Programmierung von Siemens PXC-Controllern und Entwicklung optimierter Automationslösungen für Heizungs- und Lüftungsanlagen mit passenden Regelstrategien, Sequenzen und Funktionsabläufen.
+data-de="Programmierung von Automationsstationen und Steuerungen unterschiedlicher Hersteller sowie Entwicklung optimierter Lösungen für Heizungs- und Lüftungsanlagen – mit passenden Regelstrategien."
+data-en="Programming automation stations and controllers from different manufacturers, plus optimized solutions for heating and ventilation systems – with tailored control strategies.">
+Programmierung von Automationsstationen und Steuerungen unterschiedlicher Hersteller sowie Entwicklung optimierter Lösungen für Heizungs- und Lüftungsanlagen – mit passenden Regelstrategien.
 </p>
 
 </article>
@@ -1537,15 +1781,15 @@ Programmierung von Siemens PXC-Controllern und Entwicklung optimierter Automatio
 </div>
 
 <h3
-data-de="Schnittstellen & IoT"
-data-en="Interfaces & IoT">
-Schnittstellen & IoT
+data-de="Drittanbieter- & IoT-Integration"
+data-en="Third Party & IoT Integration">
+Drittanbieter- & IoT-Integration
 </h3>
 
 <p
-data-de="Professionelle Schnittstellenprogrammierung und Integration von Drittanbieter Geräten für eine nahtlose Kommunikation mit Siemens Systemen über BACnet, Modbus, PROFIBUS, KNX und weitere Protokolle."
-data-en="Professional interface programming and third-party device integration for seamless communication with Siemens systems via BACnet, Modbus, PROFIBUS, KNX and other protocols.">
-Professionelle Schnittstellenprogrammierung und Integration von Drittanbieter Geräten für eine nahtlose Kommunikation mit Siemens Systemen über BACnet, Modbus, PROFIBUS, KNX und weitere Protokolle.
+data-de="Professionelle Schnittstellenprogrammierung und Integration von Drittanbieter-Geräten für eine nahtlose Kommunikation zwischen Systemen über BACnet, Modbus, M-Bus, KNX, OPC UA und weitere Protokolle."
+data-en="Professional interface programming and third-party device integration for seamless communication between systems via BACnet, Modbus, M-Bus, KNX, OPC UA and other protocols.">
+Professionelle Schnittstellenprogrammierung und Integration von Drittanbieter-Geräten für eine nahtlose Kommunikation zwischen Systemen über BACnet, Modbus, M-Bus, KNX, OPC UA und weitere Protokolle.
 </p>
 
 </article>
@@ -1581,6 +1825,115 @@ Strukturierte Inbetriebnahme von Automationsanlagen – von der Funktionsprüfun
 </section>
 
 
+<!-- PROJECT PRICE CALCULATOR -->
+
+<section class="calculator" id="calculator">
+
+<div class="wrap calculatorShell">
+
+<div class="calculatorControls">
+
+<span
+class="calculatorEyebrow"
+data-de="PROJEKTPREISRECHNER"
+data-en="PROJECT PRICE CALCULATOR">
+PROJEKTPREISRECHNER
+</span>
+
+<h2
+data-de="Ihr Projekt. Direkt kalkuliert."
+data-en="Your project. Instantly estimated.">
+Ihr Projekt. Direkt kalkuliert.
+</h2>
+
+<p
+class="calculatorIntro"
+data-de="Geben Sie die Anzahl der Datenpunkte ein und wählen Sie die benötigten Leistungen. Die Schätzung aktualisiert sich sofort."
+data-en="Enter the number of data points and select the services you need. The estimate updates instantly.">
+Geben Sie die Anzahl der Datenpunkte ein und wählen Sie die benötigten Leistungen. Die Schätzung aktualisiert sich sofort.
+</p>
+
+<div class="pointsControl">
+<label
+for="dataPoints"
+data-de="Anzahl der Datenpunkte"
+data-en="Number of data points">
+Anzahl der Datenpunkte
+</label>
+
+<div class="pointsInput">
+<input id="dataPoints" type="number" min="1" step="1" value="100" inputmode="numeric">
+<span data-de="Datenpunkte" data-en="data points">Datenpunkte</span>
+</div>
+</div>
+
+<fieldset class="serviceOptions">
+<legend data-de="Benötigte Leistungen" data-en="Required services">Benötigte Leistungen</legend>
+
+<label class="serviceOption">
+<input class="serviceCheck" type="checkbox" data-price="20" checked>
+<span data-de="Visualisierung" data-en="Visualization">Visualisierung</span>
+</label>
+
+<label class="serviceOption">
+<input class="serviceCheck" type="checkbox" data-price="20" checked>
+<span data-de="DDC-/SPS-Programmierung" data-en="DDC/PLC Programming">DDC-/SPS-Programmierung</span>
+</label>
+
+<label class="serviceOption">
+<input class="serviceCheck" type="checkbox" data-price="30" checked>
+<span data-de="Inbetriebnahme" data-en="Commissioning">Inbetriebnahme</span>
+</label>
+
+<label class="serviceOption">
+<input class="serviceCheck" type="checkbox" data-price="10" checked>
+<span data-de="Drittanbieter- & IoT-Integration" data-en="Third Party & IoT Integration">Drittanbieter- & IoT-Integration</span>
+</label>
+
+</fieldset>
+
+</div>
+
+<div class="calculatorResult" aria-live="polite">
+
+<span
+class="resultKicker"
+data-de="GESCHÄTZTER PROJEKTPREIS"
+data-en="ESTIMATED PROJECT PRICE">
+GESCHÄTZTER PROJEKTPREIS
+</span>
+
+<output id="projectEstimate" for="dataPoints">8.000 €</output>
+
+<div class="resultDivider"></div>
+
+<p
+class="calculatorDisclaimer"
+data-de="Unverbindliche Kostenschätzung exkl. USt. Der tatsächliche Projektpreis hängt von Umfang, Anlagenstruktur und technischen Anforderungen ab."
+data-en="Non-binding cost estimate excluding VAT. The final project price depends on scope, system structure and technical requirements.">
+Unverbindliche Kostenschätzung exkl. USt. Der tatsächliche Projektpreis hängt von Umfang, Anlagenstruktur und technischen Anforderungen ab.
+</p>
+
+<span
+class="negotiationNote"
+data-de="Individuelle Konditionen und Preisverhandlungen sind je nach Projektumfang möglich."
+data-en="Individual terms and price negotiations are possible depending on the project scope.">
+Individuelle Konditionen und Preisverhandlungen sind je nach Projektumfang möglich.
+</span>
+
+<a
+class="calculatorButton"
+href="#contact"
+data-de="Projekt besprechen ↗"
+data-en="Discuss the project ↗">
+Projekt besprechen ↗
+</a>
+
+</div>
+</div>
+</section>
+
+
 <!-- ABOUT -->
 
 <section class="about" id="about">
@@ -1606,9 +1959,9 @@ Technisches Know-how.
 
 <p 
 class="aboutText" 
-data-de="SMART GA ist ein unabhängiger Engineering-Dienstleister für Gebäudeautomation sowie Mess-, Steuerungs- und Regelungstechnik (MSR) mit Sitz in Vorarlberg, Österreich. Unser technischer Hintergrund verbindet einen Masterabschluss in Mechatronik und Automatisierungstechnik mit praktischer Berufserfahrung in der Gebäudeautomation – einschließlich Berufserfahrung bei Siemens Smart Infrastructure." 
-data-en="SMART GA is an independent engineering service provider for building automation and measurement, control, and regulation technology (MSR), based in Vorarlberg, Austria. Our technical background combines a Master's degree in mechatronics and automation engineering with hands-on professional experience in building automation – including professional experience at Siemens Smart Infrastructure."> 
-SMART GA ist ein unabhängiger Engineering-Dienstleister für Gebäudeautomation sowie Mess-, Steuerungs- und Regelungstechnik (MSR) mit Sitz in Vorarlberg, Österreich. Unser technischer Hintergrund verbindet einen Masterabschluss in Mechatronik und Automatisierungstechnik mit praktischer Berufserfahrung in der Gebäudeautomation – einschließlich Berufserfahrung bei Siemens Smart Infrastructure. 
+data-de="SMART GA ist ein unabhängiger, herstellerübergreifend arbeitender Engineering-Dienstleister für Gebäudeautomation sowie Mess-, Steuerungs- und Regelungstechnik (MSR) mit Sitz in Vorarlberg, Österreich. Unser technischer Hintergrund verbindet einen Masterabschluss in Mechatronik und Automatisierungstechnik mit praktischer Projekterfahrung in der Gebäudeautomation – einschließlich Berufserfahrung bei Siemens Smart Infrastructure."
+data-en="SMART GA is an independent, cross-vendor engineering service provider for building automation and measurement, control, and regulation technology (BMS), based in Vorarlberg, Austria. Our technical background combines a Master's degree in mechatronics and automation engineering with hands-on project experience in building automation – including professional experience at Siemens Smart Infrastructure.">
+SMART GA ist ein unabhängiger, herstellerübergreifend arbeitender Engineering-Dienstleister für Gebäudeautomation sowie Mess-, Steuerungs- und Regelungstechnik (MSR) mit Sitz in Vorarlberg, Österreich. Unser technischer Hintergrund verbindet einen Masterabschluss in Mechatronik und Automatisierungstechnik mit praktischer Projekterfahrung in der Gebäudeautomation – einschließlich Berufserfahrung bei Siemens Smart Infrastructure.
 </p>
         
 <div class="aboutFacts">
@@ -1636,9 +1989,9 @@ ERFAHRUNG
 </small>
 
 <strong
-data-de="Siemens Smart Infrastructure"
-data-en="Siemens Smart Infrastructure">
-Siemens Smart Infrastructure
+data-de="Herstellerübergreifende Projektpraxis"
+data-en="Cross-Vendor Project Experience">
+Herstellerübergreifende Projektpraxis
 </strong>
 </div>
 
@@ -1795,9 +2148,9 @@ Direkter Ansprechpartner für technische Zusammenarbeit und externe Engineering-
 <span>SMART GA © 2026</span>
 
 <span
-data-de="Unabhängige Engineering-Dienstleistung · Keine offizielle Siemens-Partnerschaft"
-data-en="Independent engineering service · No official Siemens partnership">
-Unabhängige Engineering-Dienstleistung · Keine offizielle Siemens-Partnerschaft
+data-de="Unabhängiges · herstellerübergreifendes Engineering"
+data-en="Independent · cross-vendor engineering">
+Unabhängiges · herstellerübergreifendes Engineering
 </span>
 
 <span
@@ -1812,6 +2165,30 @@ Vorarlberg · Österreich
 
 
 <script>
+function updateCalculator(){
+  const pointsInput = document.getElementById('dataPoints');
+  const estimate = document.getElementById('projectEstimate');
+
+  if (!pointsInput || !estimate) return;
+
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+  const locale = lang === 'de' ? 'de-AT' : 'en-GB';
+  const points = Math.max(0, Math.floor(Number(pointsInput.value) || 0));
+
+  const rate = [...document.querySelectorAll('.serviceCheck:checked')]
+    .reduce((sum, service) => sum + Number(service.dataset.price || 0), 0);
+
+  const total = points * rate;
+
+  const money = new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: 'EUR',
+    maximumFractionDigits: 0
+  });
+
+  estimate.textContent = money.format(total);
+}
+
 function setLang(l){
 
   document.documentElement.lang = l;
@@ -1840,10 +2217,21 @@ function setLang(l){
     : 'SMART GA | Building Automation Engineering in Vorarlberg';
 
   localStorage.setItem('smartGaLang', l);
+  updateCalculator();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   setLang(localStorage.getItem('smartGaLang') || 'de');
+
+  const pointsInput = document.getElementById('dataPoints');
+  const serviceChecks = document.querySelectorAll('.serviceCheck');
+
+  pointsInput.addEventListener('input', updateCalculator);
+  pointsInput.addEventListener('blur', () => {
+    if (Number(pointsInput.value) < 1) pointsInput.value = 1;
+    updateCalculator();
+  });
+  serviceChecks.forEach(service => service.addEventListener('change', updateCalculator));
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1912,7 +2300,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (!reduceMotion) {
-    const revealItems = document.querySelectorAll('.head, .card, .aboutGrid, .aboutFact, .contactBox');
+    const revealItems = document.querySelectorAll('.head, .card, .calculatorShell, .aboutGrid, .aboutFact, .contactBox');
     revealItems.forEach(item => item.classList.add('reveal-ready'));
 
     const observer = new IntersectionObserver(entries => {
@@ -1931,5 +2319,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-
-
