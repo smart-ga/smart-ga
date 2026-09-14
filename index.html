@@ -1720,7 +1720,7 @@ SMART <b>GA</b>
 <span class="resultKicker" data-ar="تقدير غير ملزم للميزانية" data-de="UNVERBINDLICHE BUDGETSCHÄTZUNG" data-en="NON-BINDING BUDGET ESTIMATE">UNVERBINDLICHE BUDGETSCHÄTZUNG</span>
 <output for="dataPoints" id="projectEstimate">8.000 € – 10.000 €</output>
 <div class="resultDivider"></div>
-<p class="calculatorDisclaimer" data-ar="نطاق ميزانية تقديري غير ملزم، بدون ضريبة القيمة المضافة. السعر النهائي يعتمد على هيكل النظام ونطاق الوظائف والواجهات والعمل في الموقع." data-de="Unverbindliche Budgetspanne exkl. USt.; kein Angebot und keine Preiszusage. Der Endpreis hängt von Anlagenstruktur, Funktionsumfang, Schnittstellen und Vor-Ort-Aufwand ab." data-en="Non-binding budget range excluding VAT; not a quotation or binding price. Final pricing depends on system structure, functional scope, interfaces and on-site effort.">Unverbindliche Budgetspanne exkl. USt.; kein Angebot und keine Preiszusage. Der Endpreis hängt von Anlagenstruktur, Funktionsumfang, Schnittstellen und Vor-Ort-Aufwand ab.</p>
+<p class="calculatorDisclaimer" data-ar="نطاق سعري تقديري غير ملزم، بدون ضريبة القيمة المضافة. السعر النهائي يعتمد على نطاق العمل ومتطلبات المشروع." data-de="Unverbindliche Budgetspanne exkl. USt.; kein Angebot und keine Preiszusage. Der Endpreis hängt von Anlagenstruktur, Funktionsumfang, Schnittstellen und Vor-Ort-Aufwand ab." data-en="Non-binding budget range excluding VAT; not a quotation or binding price. Final pricing depends on system structure, functional scope, interfaces and on-site effort.">Unverbindliche Budgetspanne exkl. USt.; kein Angebot und keine Preiszusage. Der Endpreis hängt von Anlagenstruktur, Funktionsumfang, Schnittstellen und Vor-Ort-Aufwand ab.</p>
 <span class="negotiationNote" data-ar="تتوفر شروط وأسعار مخصصة حسب حجم المشروع." data-de="Individuelle Konditionen sind je nach Projektumfang möglich." data-en="Individual terms are available depending on project scope.">Individuelle Konditionen sind je nach Projektumfang möglich.</span>
 <a class="calculatorButton" data-ar="ناقش المشروع ↗" data-de="Projekt besprechen ↗" data-en="Discuss the project ↗" href="#contact">Projekt besprechen ↗</a>
 </div>
@@ -1836,8 +1836,14 @@ function updateCalculator(){
   const maxRate = selectedServices
     .reduce((sum, service) => sum + Number(service.dataset.max || 0), 0);
 
-  const minTotal = Math.round(points * minRate / 100) * 100;
-  const maxTotal = Math.round(points * maxRate / 100) * 100;
+  // Market-specific pricing:
+  // DE / EN: standard range based on €80–€100 per data point (all services selected)
+  // AR: Arabic-market range based on €60–€80 per data point (all services selected)
+  const minFactor = lang === 'ar' ? 0.75 : 1;
+  const maxFactor = lang === 'ar' ? 0.80 : 1;
+
+  const minTotal = Math.round(points * minRate * minFactor / 100) * 100;
+  const maxTotal = Math.round(points * maxRate * maxFactor / 100) * 100;
 
   const money = new Intl.NumberFormat(locale, {
     style: 'currency',
