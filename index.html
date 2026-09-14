@@ -1233,251 +1233,6 @@ footer{padding:30px 0}
   text-transform:uppercase;
 }
 
-/* PROJECT PRICE CALCULATOR */
-
-.calculator{
-  padding:120px 0;
-  color:#f6f8fb;
-  background:
-    radial-gradient(circle at 12% 18%,rgba(32,243,210,.09),transparent 30%),
-    radial-gradient(circle at 88% 82%,rgba(75,140,255,.12),transparent 34%),
-    #050810;
-}
-
-.calculatorShell{
-  position:relative;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
-  gap:22px;
-  padding:28px;
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:32px;
-  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-  box-shadow:0 40px 100px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.05);
-}
-
-.calculatorShell:before{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  top:-300px;
-  left:22%;
-  border-radius:50%;
-  background:rgba(32,243,210,.08);
-  filter:blur(30px);
-  pointer-events:none;
-}
-
-.calculatorControls,
-.calculatorResult{
-  position:relative;
-  z-index:1;
-  border-radius:24px;
-}
-
-.calculatorControls{
-  padding:34px;
-}
-
-.calculatorEyebrow{
-  display:block;
-  margin-bottom:12px;
-  color:var(--cyan);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.15em;
-}
-
-.calculator h2{
-  max-width:620px;
-  margin:0;
-  font-size:clamp(38px,4.2vw,58px);
-  line-height:1.02;
-  letter-spacing:-.045em;
-}
-
-.calculatorIntro{
-  max-width:650px;
-  margin:20px 0 30px;
-  color:#9aa9b9;
-  font-size:16px;
-  line-height:1.75;
-}
-
-.pointsControl{
-  margin-bottom:24px;
-}
-
-
-.pointsControl label,
-.serviceOptions legend{
-  display:block;
-  margin-bottom:10px;
-  color:#dce6ef;
-  font-size:14px;
-  font-weight:750;
-}
-
-.pointsInput{
-  display:flex;
-  align-items:center;
-  max-width:310px;
-  min-height:58px;
-  padding:0 16px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:16px;
-  background:rgba(3,7,13,.62);
-  transition:border-color .2s ease,box-shadow .2s ease;
-}
-
-.pointsInput:focus-within{
-  border-color:rgba(32,243,210,.58);
-  box-shadow:0 0 0 4px rgba(32,243,210,.08);
-}
-
-.pointsInput input{
-  min-width:0;
-  width:100%;
-  border:0;
-  outline:0;
-  color:#fff;
-  background:transparent;
-  font:800 21px/1 inherit;
-}
-
-.pointsInput span{
-  flex:0 0 auto;
-  color:#77889b;
-  font-size:14px;
-}
-
-
-.serviceOptions{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-  margin:0;
-  padding:0;
-  border:0;
-}
-
-.serviceOptions legend{
-  grid-column:1/-1;
-  width:100%;
-}
-
-.serviceOption{
-  display:grid;
-  grid-template-columns:20px minmax(0,1fr);
-  gap:12px;
-  align-items:center;
-  min-height:72px;
-  padding:14px;
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:16px;
-  background:rgba(255,255,255,.035);
-  cursor:pointer;
-  transition:border-color .2s ease,background .2s ease,transform .2s ease;
-}
-
-.serviceOption:hover{
-  transform:translateY(-2px);
-  border-color:rgba(32,243,210,.24);
-  background:rgba(255,255,255,.055);
-}
-
-.serviceOption:has(input:checked){
-  border-color:rgba(32,243,210,.34);
-  background:linear-gradient(135deg,rgba(32,243,210,.08),rgba(75,140,255,.06));
-}
-
-.serviceOption input{
-  width:18px;
-  height:18px;
-  margin:0;
-  accent-color:#20f3d2;
-}
-
-.serviceOption span{
-  min-width:0;
-  color:#ecf2f7;
-  font-size:14px;
-  font-weight:700;
-  line-height:1.35;
-}
-
-
-/* THIRD-PARTY / IOT INTEGRATION */
-#projectEstimate{
-  display:block;
-  margin:17px 0 8px;
-  color:#fff;
-  font-size:clamp(48px,5.7vw,78px);
-  font-weight:900;
-  line-height:.98;
-  letter-spacing:-.055em;
-  overflow-wrap:anywhere;
-}
-
-.resultDivider{
-  height:1px;
-  margin:30px 0 24px;
-  background:rgba(255,255,255,.09);
-}
-
-.calculatorDisclaimer{
-  margin:0 0 24px;
-  color:#8fa0b1;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.negotiationNote{
-  display:block;
-  margin:-8px 0 24px;
-  color:#cfe8e5;
-  font-size:14px;
-  font-weight:700;
-  line-height:1.6;
-}
-
-.calculatorButton{
-  align-self:flex-start;
-  min-height:48px;
-  padding:0 20px;
-  border-radius:14px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#061019;
-  background:linear-gradient(135deg,#fff,#dffdfa);
-  font-size:14px;
-  font-weight:850;
-  transition:transform .2s ease,box-shadow .2s ease;
-}
-
-.calculatorButton:hover{
-  transform:translateY(-2px);
-  box-shadow:0 14px 36px rgba(32,243,210,.14);
-}
-
-@media(max-width:950px){
-  .calculatorShell{grid-template-columns:1fr}
-  .calculatorResult{min-height:410px}
-}
-
-@media(max-width:600px){
-  .calculator{padding:82px 0}
-  .calculatorShell{padding:10px;border-radius:24px}
-  .calculatorControls,.calculatorResult{padding:26px 20px}
-  .serviceOptions{grid-template-columns:1fr}
-  .pointsInput{max-width:none}
-  .calculatorResult{min-height:360px}
-  #projectEstimate{font-size:48px}
-}
-
 @media(prefers-reduced-motion:reduce){
   .orb,.orb:before,.orb:after,.core,.node,.nodeArt svg{animation:none!important}
   .visual{transition:none}
@@ -1492,13 +1247,10 @@ html[dir="rtl"] body{
 }
 html[dir="rtl"] .brand,
 html[dir="rtl"] .lang,
-html[dir="rtl"] .ct strong,
-html[dir="rtl"] .pointsInput,
-html[dir="rtl"] #projectEstimate{
+html[dir="rtl"] .ct strong{
   direction:ltr;
 }
 html[dir="rtl"] .eyebrow,
-html[dir="rtl"] .calculatorEyebrow,
 html[dir="rtl"] .aboutLabel,
 html[dir="rtl"] .contactEyebrow,
 html[dir="rtl"] .aboutFact small,
@@ -1509,8 +1261,6 @@ html[dir="rtl"] .ct small{
 html[dir="rtl"] .lead,
 html[dir="rtl"] .head p,
 html[dir="rtl"] .cardFace,
-html[dir="rtl"] .calculatorControls,
-html[dir="rtl"] .calculatorResult,
 html[dir="rtl"] .about,
 html[dir="rtl"] .contactCopy{
   text-align:right;
@@ -1528,7 +1278,6 @@ SMART <b>GA</b>
 <div class="links">
 <a data-ar="الرئيسية" data-de="Startseite" data-en="Home" href="#">Startseite</a>
 <a data-ar="الخدمات" data-de="Leistungen" data-en="Services" href="#services">Leistungen</a>
-<a data-ar="حاسبة الميزانية" data-de="Budgetrechner" data-en="Budget Calculator" href="#calculator">Budgetrechner</a>
 <a data-ar="من نحن" data-de="Über uns" data-en="About Us" href="#about">Über uns</a>
 <a data-ar="تواصل" data-de="Kontakt" data-en="Contact" href="#contact">Kontakt</a>
 </div>
@@ -1681,51 +1430,6 @@ SMART <b>GA</b>
 </div>
 </div>
 </section>
-<!-- PROJECT BUDGET CALCULATOR -->
-<section class="calculator" id="calculator">
-<div class="wrap calculatorShell">
-<div class="calculatorControls">
-<span class="calculatorEyebrow" data-ar="ميزانية المشروع" data-de="PROJEKTBUDGET" data-en="PROJECT BUDGET">PROJEKTBUDGET</span>
-<h2 data-ar="احسب ميزانية مشروعك." data-de="Projektbudget berechnen." data-en="Estimate your project budget.">Projektbudget berechnen.</h2>
-<p class="calculatorIntro" data-ar="اختر عدد نقاط البيانات والخدمات المطلوبة لتحصل على نطاق ميزانية تقديري." data-de="Datenpunkte und Leistungen auswählen. Sie erhalten sofort eine unverbindliche Budgetspanne." data-en="Select the data points and required services to receive an instant non-binding budget range.">Datenpunkte und Leistungen auswählen. Sie erhalten sofort eine unverbindliche Budgetspanne.</p>
-<div class="pointsControl">
-<label data-ar="عدد نقاط البيانات" data-de="Anzahl der Datenpunkte" data-en="Number of data points" for="dataPoints">Anzahl der Datenpunkte</label>
-<div class="pointsInput">
-<input id="dataPoints" inputmode="numeric" min="1" step="1" type="number" value="100"/>
-<span data-ar="نقاط البيانات" data-de="Datenpunkte" data-en="Data Points">Datenpunkte</span>
-</div>
-</div>
-
-<fieldset class="serviceOptions">
-<legend data-ar="الخدمات المطلوبة" data-de="Benötigte Leistungen" data-en="Required Services">Benötigte Leistungen</legend>
-<label class="serviceOption">
-<input checked="" class="serviceCheck" data-max="22" data-min="18" type="checkbox"/>
-<span data-ar="واجهات التشغيل والمراقبة (BMS)" data-de="Visualisierung" data-en="BMS Visualization">Visualisierung</span>
-</label>
-<label class="serviceOption">
-<input checked="" class="serviceCheck" data-max="35" data-min="28" type="checkbox"/>
-<span data-ar="برمجة DDC/PLC" data-de="DDC-/SPS-Programmierung" data-en="DDC/PLC Programming">DDC-/SPS-Programmierung</span>
-</label>
-<label class="serviceOption">
-<input checked="" class="serviceCheck" data-max="29" data-min="23" type="checkbox"/>
-<span data-ar="الاختبار والتشغيل (Commissioning)" data-de="Inbetriebnahme" data-en="Testing &amp; Commissioning">Inbetriebnahme</span>
-</label>
-<label class="serviceOption">
-<input checked="" class="serviceCheck" data-max="14" data-min="11" type="checkbox"/>
-<span data-ar="دمج الأنظمة (System Integration / IoT)" data-de="Systemintegration" data-en="Third-Party System Integration">Systemintegration</span>
-</label>
-</fieldset>
-</div>
-<div aria-live="polite" class="calculatorResult">
-<span class="resultKicker" data-ar="تقدير غير ملزم للميزانية" data-de="UNVERBINDLICHE BUDGETSCHÄTZUNG" data-en="NON-BINDING BUDGET ESTIMATE">UNVERBINDLICHE BUDGETSCHÄTZUNG</span>
-<output for="dataPoints" id="projectEstimate">8.000 € – 10.000 €</output>
-<div class="resultDivider"></div>
-<p class="calculatorDisclaimer" data-ar="نطاق سعري تقديري غير ملزم، بدون ضريبة القيمة المضافة. السعر النهائي يعتمد على نطاق العمل ومتطلبات المشروع." data-de="Unverbindliche Budgetspanne exkl. USt.; kein Angebot und keine Preiszusage. Der Endpreis hängt von Anlagenstruktur, Funktionsumfang, Schnittstellen und Vor-Ort-Aufwand ab." data-en="Non-binding budget range excluding VAT; not a quotation or binding price. Final pricing depends on system structure, functional scope, interfaces and on-site effort.">Unverbindliche Budgetspanne exkl. USt.; kein Angebot und keine Preiszusage. Der Endpreis hängt von Anlagenstruktur, Funktionsumfang, Schnittstellen und Vor-Ort-Aufwand ab.</p>
-<span class="negotiationNote" data-ar="تتوفر شروط وأسعار مخصصة حسب حجم المشروع." data-de="Individuelle Konditionen sind je nach Projektumfang möglich." data-en="Individual terms are available depending on project scope.">Individuelle Konditionen sind je nach Projektumfang möglich.</span>
-<a class="calculatorButton" data-ar="ناقش المشروع ↗" data-de="Projekt besprechen ↗" data-en="Discuss the project ↗" href="#contact">Projekt besprechen ↗</a>
-</div>
-</div>
-</section>
 <!-- ABOUT -->
 <section class="about" id="about">
 <div class="wrap">
@@ -1816,48 +1520,6 @@ LinkedIn ↗
 </div>
 </footer>
 <script>
-function updateCalculator(){
-  const pointsInput = document.getElementById('dataPoints');
-  const estimate = document.getElementById('projectEstimate');
-
-  if (!pointsInput || !estimate) return;
-
-  const lang = ['de','en','ar'].includes(document.documentElement.lang)
-    ? document.documentElement.lang
-    : 'de';
-
-  const locale = lang === 'de' ? 'de-AT' : (lang === 'ar' ? 'ar-SA' : 'en-GB');
-  const points = Math.max(0, Math.floor(Number(pointsInput.value) || 0));
-  const selectedServices = [...document.querySelectorAll('.serviceCheck:checked')];
-
-  const minRate = selectedServices
-    .reduce((sum, service) => sum + Number(service.dataset.min || 0), 0);
-
-  const maxRate = selectedServices
-    .reduce((sum, service) => sum + Number(service.dataset.max || 0), 0);
-
-  // Market-specific pricing:
-  // DE / EN: standard range based on €80–€100 per data point (all services selected)
-  // AR: Arabic-market range based on €60–€80 per data point (all services selected)
-  const minFactor = lang === 'ar' ? 0.75 : 1;
-  const maxFactor = lang === 'ar' ? 0.80 : 1;
-
-  const minTotal = Math.round(points * minRate * minFactor / 100) * 100;
-  const maxTotal = Math.round(points * maxRate * maxFactor / 100) * 100;
-
-  const money = new Intl.NumberFormat(locale, {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0
-  });
-
-  if (!selectedServices.length || points === 0) {
-    estimate.textContent = money.format(0);
-    return;
-  }
-
-  estimate.textContent = `${money.format(minTotal)} – ${money.format(maxTotal)}`;
-}
 
 function setLang(l){
   if (!['de','en','ar'].includes(l)) l = 'de';
@@ -1884,21 +1546,10 @@ function setLang(l){
         : 'SMART GA | Building Automation & BMS Engineering in Vorarlberg';
 
   localStorage.setItem('smartGaLang', l);
-  updateCalculator();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   setLang(localStorage.getItem('smartGaLang') || 'de');
-
-  const pointsInput = document.getElementById('dataPoints');
-  const serviceChecks = document.querySelectorAll('.serviceCheck');
-
-  pointsInput.addEventListener('input', updateCalculator);
-  pointsInput.addEventListener('blur', () => {
-    if (Number(pointsInput.value) < 1) pointsInput.value = 1;
-    updateCalculator();
-  });
-  serviceChecks.forEach(service => service.addEventListener('change', updateCalculator));
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1971,7 +1622,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (!reduceMotion) {
-    const revealItems = document.querySelectorAll('.head, .card, .calculatorShell, .aboutGrid, .aboutFact, .contactBox');
+    const revealItems = document.querySelectorAll('.head, .card, .aboutGrid, .aboutFact, .contactBox');
     revealItems.forEach(item => item.classList.add('reveal-ready'));
 
     const observer = new IntersectionObserver(entries => {
