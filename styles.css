@@ -17,13 +17,13 @@
 }
 
 .founder-image {
-    width: 120px;
-    height: 120px;
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
-
 .founder-profile h3 {
     font-size: 17px;
     font-weight: 600;
@@ -54,7 +54,7 @@
     }
 
     .founder-image {
-        width: 100px;
-        height: 100px;
+        width: 70px !important;
+        height: 70px !important;
     }
 }
